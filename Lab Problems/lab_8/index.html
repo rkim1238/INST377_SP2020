@@ -3,7 +3,7 @@
   <head>
     <title>Charts Lab</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha256-CIc5A981wu9+q+hmFYYySmOvsA3IsoX+apaYlL0j6fg=" crossorigin="anonymous"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -17,7 +17,7 @@
     </div>
     <script>
       fetch('./countries.json') // replace this with the food safety data set
-        .then((data) => JSON.parse(data)) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
+        .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
         .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
           console.log(data);
           // return data; // <- this will pass the data to the next "then" statement when I'm ready.
